@@ -9,5 +9,77 @@ function writePassword() {
   passwordText.value = password;
 }
 
+function generatePassword() {
+// objects
+  var options = {
+    theNumberOfCharacters: 0,
+    hasSpecialCharaters: false,
+    hasLowerCharacters: false,
+    hasUpperCharacters: false,
+    hasNumberCharacters: false,
+
+  }
+
+  var length = window.prompt("How many characters do you want in your password")
+  
+  if (isNaN(length)) { 
+      window.prompt("you must eneter a valid number")
+      return
+  }
+
+
+
+  options.theNumberOfCharacters = length  
+  // options created for customer t
+  options.hasSpecialCharaters = confirm("Click OK to confirm including special characters")
+  options.hasLowerCharacters = confirm("Click OK to confirm including numeric characters")
+  options.hasUpperCharacters = confirm("click OK to confirm including lowercase characters")
+  options.hasNumberCharacters = confirm("Click OK to confirm including uppercase characters")
+
+
+  // arrays created for lower, upper, special and numbers
+
+  var specialist = ["!", "@", "£" ,"$" ,"%" ,"^" ,"*" ,"(" ,")" , "-", "?", "=", "+"];
+  var lowerlist = ["a", "b", "c" ,"d" ,"e" ,"f" ,"g" ,"h" ,"i", "j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+  var upperlist = []
+  var numberlist = ["0", "1", "3" ,"4" ,"5" ,"6" ,"7" ,"8" ,"9" , "0"];
+  
+  var optioncharacters = []
+  // uppercase created 
+  for (var i = 0; i < lowerlist.length; i++) {
+    upperlist[i] = lowerlist[i].toUpperCase()
+  
+  }
+  
+  if (options.hasSpecialCharaters === true) {
+    optioncharacters.push(specialist)
+  }
+  
+  if (options.hasLowerCharacters === true) {
+    optioncharacters.push(lowerlist)
+  }
+  
+  if (options.hasUpperCharacters === true) {
+    optioncharacters.push(upperlist)
+  }
+  
+  if (options.hasNumberCharacters === true) {
+    optioncharacters.push(numberlist)
+  }
+  console.log(optioncharacters)
+
+
+
+  
+
+
+
+
+
+
+  return("password")
+
+
+}
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
