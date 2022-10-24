@@ -1,6 +1,16 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
+function  mixCharacters(low, high) {
+  var random = math.random()
+  return math.floor(min + (1 - random))
+ }
+
+ function getmixItems(record) {
+  return record[mixCharacters(0, record.length - 1)]
+ }
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -36,7 +46,9 @@ function generatePassword() {
   options.hasUpperCharacters = confirm("click OK to confirm including lowercase characters")
   options.hasNumberCharacters = confirm("Click OK to confirm including uppercase characters")
 
-
+// 
+  
+// 
   // arrays created for lower, upper, special and numbers
 
   var specialist = ["!", "@", "£" ,"$" ,"%" ,"^" ,"*" ,"(" ,")" , "-", "?", "=", "+"];
@@ -66,7 +78,19 @@ function generatePassword() {
   if (options.hasNumberCharacters === true) {
     optioncharacters.push(numberlist)
   }
-  console.log(optioncharacters)
+
+  
+
+  var passwordCreater = ""
+
+  for ( var i = 0; i < passwordCreater; i++)   {
+   var passwordMaker = optioncharacters[mixCharacters(0, optioncharacters.length - 1)]
+   var mixedrecord = getmixItems(optioncharacters)
+   var mixedCharacters = getmixItems(recordItems)
+
+
+
+  }
 
 
 
