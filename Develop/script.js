@@ -25,7 +25,7 @@ function writePassword() {
 }
 
 function generatePassword() {
-  // objects
+  // objects created
   var options = {
     theNumberOfCharacters: 0,
     hasSpecialCharaters: false,
@@ -33,16 +33,16 @@ function generatePassword() {
     hasUpperCharacters: false,
     hasNumberCharacters: false,
   };
-
+// alert created
   var length = window.prompt(
     "How many characters do you want in your password"
   );
-
+// not a number created
   if (isNaN(length)) {
     window.prompt("you must eneter a valid number");
     return;
   }
-
+// object linked with confirm and a message
   options.theNumberOfCharacters = length;
   // options created for customer t
   options.hasSpecialCharaters = confirm(
@@ -114,7 +114,7 @@ function generatePassword() {
   for (var i = 0; i < lowerlist.length; i++) {
     upperlist[i] = lowerlist[i].toUpperCase();
   }
-
+//
   if (options.hasSpecialCharaters === true) {
     optioncharacters.push(specialist);
   }
@@ -134,7 +134,7 @@ function generatePassword() {
     optioncharacters.push(lowerlist);
   }
 
-  // password generate
+  // password generater
   var passwordCreater = "";
 
   for (var i = 0; i < length; i++) {
@@ -144,9 +144,9 @@ function generatePassword() {
     passwordCreater += mixedCharacters;
 
     return passwordCreater;
-    
+
   }
- 
+
 }
-  // Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword);
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
