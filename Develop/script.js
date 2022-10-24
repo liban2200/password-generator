@@ -3,12 +3,18 @@ var generateBtn = document.querySelector("#generate");
 
 
 function  mixCharacters(low, high) {
-  var random = math.random()
-  return math.floor(min + (1 - random))
- }
+   if (!high) {
+    high = low
+     low = 0 
+
+   }
+ var mixes = Math.random() 
+ return Math.floor(low*(1 - mixes) + mixes*high)
+}
+
 
  function getmixItems(record) {
-  return record[mixCharacters(0, record.length - 1)]
+  return record[mixCharacters(record.length)]
  }
 
 // Write password to the #password input
@@ -18,7 +24,6 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
 function generatePassword() {
 // objects
   var options = {
@@ -78,32 +83,28 @@ function generatePassword() {
   if (options.hasNumberCharacters === true) {
     optioncharacters.push(numberlist)
   }
+  if(optioncharacters.length === 0) {
+    optioncharacters.push(lowerlist)
+
+
+  } 
 
   
 
   var passwordCreater = ""
 
-  for ( var i = 0; i < passwordCreater; i++)   {
-   var passwordMaker = optioncharacters[mixCharacters(0, optioncharacters.length - 1)]
+  for ( var i = 0; i < length; i++)   {
    var mixedrecord = getmixItems(optioncharacters)
-   var mixedCharacters = getmixItems(recordItems)
+   var mixedCharacters = getmixItems(mixedrecord)
+   
+   passwordCreater += mixedCharacters
+  
+console.log(passwordCreater)  
 
 
+  return passwordCreater
 
   }
-
-
-
-  
-
-
-
-
-
-
-  return("password")
-
-
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
