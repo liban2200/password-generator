@@ -10,11 +10,9 @@ function mixCharacters(low, high) {
   return Math.floor(low * (1 - mixes) + mixes * high);
 }
 
-
 function getMixItems(record) {
   return record[mixCharacters(record.length)];
 }
-
 
 // Write password to the #password input
 function writePassword() {
@@ -33,16 +31,16 @@ function generatePassword() {
     hasUpperCharacters: false,
     hasNumberCharacters: false,
   };
-// alert created
+  // alert created
   var length = window.prompt(
     "How many characters do you want in your password"
   );
-// not a number created
+  // not a number created
   if (isNaN(length)) {
     window.prompt("you must eneter a valid number");
     return;
   }
-// object linked with confirm and a message
+  // object linked with confirm and a message
   options.theNumberOfCharacters = length;
   // options created for customer t
   options.hasSpecialCharaters = confirm(
@@ -107,14 +105,14 @@ function generatePassword() {
     "z",
   ];
   var upperlist = [];
-  var numberlist = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9",];
+  var numberlist = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
   var optioncharacters = [];
   // uppercase created
   for (var i = 0; i < lowerlist.length; i++) {
     upperlist[i] = lowerlist[i].toUpperCase();
   }
-//
+  //
   if (options.hasSpecialCharaters === true) {
     optioncharacters.push(specialist);
   }
@@ -144,9 +142,7 @@ function generatePassword() {
     passwordCreater += mixedCharacters;
 
     return passwordCreater;
-
   }
-
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
