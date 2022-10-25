@@ -113,20 +113,18 @@ function generatePassword() {
     upperlist[i] = lowerlist[i].toUpperCase();
   }
   //
-  if (options.hasSpecialCharaters === true) {
-    optioncharacters.push(specialist);
+  var possible = []
+  if (options.specialist) {
+    possible = possible.concat(hasSpecialCharaters);
   }
-
-  if (options.hasLowerCharacters === true) {
-    optioncharacters.push(lowerlist);
+  if (options.lowerlist) {
+    possible = possible.concat(hasLowerCharacters);
   }
-
-  if (options.hasUpperCharacters === true) {
-    optioncharacters.push(upperlist);
+  if (options.upperlist) {
+    possible = possible.concat(hasUpperCharacters);
   }
-
-  if (options.hasNumberCharacters === true) {
-    optioncharacters.push(numberlist);
+  if (options.numberlist) {
+    possible = possible.concat(hasNumberCharacters);
   }
 
   if (optioncharacters.length === 0) {
