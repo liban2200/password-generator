@@ -30,7 +30,7 @@
 
 ## Link
 
-### Deployed url: [https://liban2200.github.io/password-generator/](https://liban2200.github.io/password-generator/)
+### Deployed url: [https://liban2200.github.io/password-generator/](https://liban2200.github.io/password-generator/) https://liban2200.github.io/password-generator/
 
 ### Github url: [https://github.com/liban2200/password-generator/tree/dev](https://github.com/liban2200/password-generator/tree/dev)
 

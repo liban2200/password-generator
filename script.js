@@ -128,11 +128,12 @@ function generatePassword() {
   if (options.hasNumberCharacters === true) {
     optioncharacters.push(numberlist);
   }
+
   if (optioncharacters.length === 0) {
     optioncharacters.push(lowerlist);
   }
 
-  // password generater
+  // loop for password generator
   var passwordCreater = "";
 
   for (var i = 0; i < length; i++) {
